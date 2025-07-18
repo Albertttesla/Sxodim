@@ -1,0 +1,70 @@
+body{
+    background-color: #4e22de; /* Цвет фона сайта */
+    margin-left: 10px; /* Двигаем все правее, дляя лучшего вида */
+}
+a {
+    color: black; /* Цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    margin-left: 15px;
+    font-size: 25px;
+}
+
+/* Стиль при наведении на ссылку */
+a:hover {
+    color: #412e79; /* Новый цвет текста при наведении */
+    text-decoration: underline; /* Добавляем подчеркивание при наведении */
+}
+
+.container1 {
+    display: flex;
+    align-items: center;
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+    width: 40%; /* Ширина блока с фото */
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.caption {
+    margin-left: 20px;
+    text-align: center;
+    flex-grow: 1; /* Блок с текстом занимает все оставшееся пространство */
+}
+.caption p {
+    font-size: 25px;
+    text-align: left;
+}
+
+
+.collage1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 10px;
+}
+
+.collage1 img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+
+
+.collage {
+    display: flex; /* Используем flexbox */
+}
+
+.collage img {
+    width: 500px; /* Каждое изображение будет занимать половину ширины контейнера */
+    height: 500px; /* Автоматическое масштабирование высоты */
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}

@@ -1,0 +1,50 @@
+body{
+    background-color: #efeaff; /* Цвет фона сайта */
+    margin-left: 10px; /* Двигаем все правее, дляя лучшего вида */
+}
+
+.explanation {
+    display: none;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+} /* Параметры обьяснения */
+
+a {
+    color: black; /* Цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    margin-left: 15px;
+}
+
+/* Стиль при наведении на ссылку */
+a:hover {
+    color: #412e79; /* Новый цвет текста при наведении */
+    text-decoration: underline; /* Добавляем подчеркивание при наведении */
+}
+
+h1{
+    text-align: center; /* Выраавнивание по центру */
+}
+
+.практика h3{
+    text-align: center; /* Выраавнивание по центру */
+}
+
+.formula p{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    height: 120%;
+    text-align: center;
+    font-size: 20px;
+    /* Параметры текста флормулы */
+} 
+
+.formula p:hover{
+    background-color: #dfd5fdfe;
+    /* Изменение цвета фона при наведении */
+}
+
+img{
+    height: 300px; /* Высота фото */
+}
