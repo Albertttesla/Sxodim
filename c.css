@@ -1,0 +1,210 @@
+body{
+    background-color:  #efeaff; /* Цвет фона сайта */
+}
+
+marquee{
+    background-color:  #dfd5fdfe; /* Цвет бегущей строки */
+}
+
+a {
+    color: black; /* Цвет текста */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+/* Стиль при наведении на ссылку */
+a:hover {
+    color: #412e79; /* Новый цвет текста при наведении */
+    text-decoration: underline; /* Добавляем подчеркивание при наведении */
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    margin-top: 6vh;
+  } /* Параметры оглавления */
+  
+  .letter {
+    font-size: 50px;
+    transition: font 0.3s ease, transform 0.3s ease;
+    margin: 5px;
+    cursor: pointer;
+  } /* Параметры букв */
+  
+  .letter:hover {
+      transform: scale(1.5); 
+  } /* Изменение размера при наведении */
+
+.container {
+    display: flex; /* Используем flexbox */
+    align-items: center; /* Выравниваем элементы по вертикали */
+}
+
+.help {
+    display: flex; /* Используем flexbox */
+    align-items: center; /* Выравниваем элементы по вертикали */
+    justify-content: space-between; /* Выравнивания элементов вдоль главной оси контейнера */
+}
+.text2 {
+    width: 200%; /* Ширина текстового блока */
+    margin-left: 40px; /* Двигаем вправо */
+}
+
+.text2 p{
+    width: 200%; /* Ширина текстового блока */
+}
+
+.imgg {
+    display: flex; /* Используем flexbox */
+    align-items: center; /* Выравниваем элементы по вертикали */
+    justify-content: space-between; /* Выравнивания элементов вдоль главной оси контейнера */
+}
+
+.explanation {
+    display: none;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 20px; 
+    text-align: left;
+} /* Параметры обьяснения */
+
+.formula p{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    height: 120%;
+    text-align: center;
+    font-size: 23px; 
+    text-align: left;
+    /* Параметры текста флормулы */
+} 
+
+.formula p:hover{
+    background-color: #dfd5fdfe;
+    /* Изменение цвета фона при наведении */
+}
+
+
+.image3{
+    width: 100%; /* Ширина блока изображения */
+    align-items: center; /* Выравниваем по центру */
+    margin-left: 100px; /* Двигаем вправо */
+}
+.image3 img{
+    height: 350px; /* Высота изображения */
+    width: 350px; /* Ширина изображения */
+    align-items: center;/* Выравниваем по центру */
+}
+.image2 {
+    width: 100%; /* Ширина блока с изображением */
+    text-align: center; /* Выравниваем по центру текст */
+    align-items: center; /* Выравниваем по центру */
+}
+.image2 img {
+    height: 300px; /* Высота изображения */
+    margin-left: 50px; /* Двигаем вправо */
+    width: auto;/* Ширина изображения */
+}
+
+.image4{
+    width: 100%; /* Ширина блока */
+}
+.image4 img{
+    width: 500px; /* Ширина блока */
+}
+
+.c1{
+    background-color: #dfd5fdfe; /* Цвет блока */
+}
+
+.cont {
+    display: flex; /* Используем flexbox */
+    flex-direction: column; /* Выравнивае в столбец */
+}
+
+.row {
+    display: flex; /* Используем flexbox */
+    justify-content: space-between; /* Выравнивания элементов вдоль главной оси контейнера */
+    margin-bottom: 20px; /* Отступ между строками */
+}
+
+.video {
+    width: 49%; /* Ширина видео*/
+    margin-left: 20px;
+    margin-bottom: 30px; /* Отступ вниз */
+}
+
+p {
+    margin-top: 10px; /* Отступ между видео и текстом */
+}
+
+
+.text {
+    flex: 1; /* Растягиваем текстовый блок, чтобы он занимал всё доступное пространство */
+    padding-left: 50px; /* Добавляем отступ справа от текста */
+}
+
+img {
+    float: right; /* Размещаем изображение справа */
+    width: 30%; /* Задаем ширину для изображения */
+    margin-right: 100px;
+    margin-left: 40px; /* Отступы в две стороны */
+}
+
+.video-container {
+    position: relative; /* Позиционирование относительно исходного положения. */
+    display: inline-block; /* устанавливает элементу свойство блочного элемента */
+}
+
+.video {
+    position: relative;
+    width: 560px;
+    height: 315px;
+} /* Параметры видео */
+
+.text1 {
+    position: relative; /* Изменено на относительное позиционирование */
+    margin: 10px; /* Отступ от краев контейнера */
+}
+
+.site{
+    background-color: #dfd5fdfe; /* Установка цвета доп окна */
+}
+
+.circle-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: #4CAF50;
+      color: white;
+      font-size: 24px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .circle-button:hover + .tooltip {
+      opacity: 1;
+      transform: translateY(-10px);
+    }
+
+    .tooltip {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      background: #333;
+      color: #fff;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+

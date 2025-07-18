@@ -1,0 +1,69 @@
+
+[
+  {
+    "id": "event1",
+    "title": "Рок-вечеринка в клубе",
+    "description": "Мощный звук и любимые хиты от местных групп.",
+    "date": "Пятница, 26 июля — 20:00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Rock_band_performance.jpg",
+    "details": "Выступают группы: FireSound, Звук и Свет. Вход свободный. Место: клуб «Энергия»."
+  },
+  {
+    "id": "event2",
+    "title": "Ночь электронной музыки",
+    "description": "Известные диджеи, танцы до утра, световое шоу.",
+    "date": "Суббота, 27 июля — 22:00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d3/DJ_nightclub.jpg",
+    "details": "Спецгость — DJ Proton. Место: Зал «Галактика». Билеты от 500₽."
+  },
+  {
+    "id": "event3",
+    "title": "Концерт классической музыки",
+    "description": "Выступление симфонического оркестра.",
+    "date": "Воскресенье, 28 июля — 19:00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Symphony_orchestra_concert.jpg",
+    "details": "Исполняются произведения Бетховена и Моцарта. Место: Концертный зал «Артек». Билеты от 300₽."
+  },
+  {
+    "id": "event4",
+    "title": "Фестиваль уличной музыки",
+    "description": "Лучшие уличные музыканты города.",
+    "date": "Понедельник, 29 июля — 16:00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Street_music_festival.jpg",
+    "details": "Место: Площадь Свободы. Вход свободный."
+  },
+  {
+    "id": "event5",
+    "title": "Концерт рок-группы",
+    "description": "Выступление популярной рок-группы.",
+    "date": "Вторник, 30 июля — 21:00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Rock_band_concert.jpg",
+    "details": "Место: Арена «Рок». Билеты от 800₽."
+  },
+  {
+    "id": "event6",
+    "title": "Джазовый вечер",
+    "description": "Лучшие джазовые исполнители города.",
+    "date": "Среда, 31 июля — 19:00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Jazz_band_performance.jpg",
+    "details": "Место: Джаз-клуб «Саксофон». Билеты от 400₽."
+  },
+  {
+    "id": "event7",
+    "title": "Фестиваль электронной музыки",
+    "description": "Танцы под лучшие треки от известных диджеев.",
+    "date": "Четверг, 1 августа — 22:00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Electronic_music_festival.jpg",
+    "details": "Место: Ночной клуб «Электроника». Билеты от 600₽."
+  },
+  {
+    "id": "event8",
+    "title": "Концерт поп-звезды",
+    "description": "Выступление популярной поп-исполнительницы.",
+    "date": "Пятница, 2 августа — 20:00",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Pop_star_concert.jpg",
+    "details": "Место: Арена «Звезда». Билеты от 1000₽."
+  }
+]
+
+
