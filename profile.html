@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Профиль</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f7f7f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .profile-container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      width: 400px;
+      height: 400px;
+      text-align: center;
+    }
+
+    .profile-container h2 {
+      margin-bottom: 20px;
+    }
+
+    .profile-container img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 2px solid #ccc;
+    }
+
+    .profile-container p {
+      margin: 6px 0;
+      font-size: 16px;
+    }
+
+    .profile-container span {
+      font-weight: bold;
+    }
+
+    .edit-button, .save-button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .edit-button:hover, .save-button:hover {
+      background-color: #45a049;
+    }
+
+    input, select {
+      padding: 6px;
+      width: 90%;
+      margin: 5px auto;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-container" id="profile">
+    <h2>Профиль пользователя</h2>
+  </div>
+
+  <script>
+    const profileDiv = document.getElementById("profile");
+    let user = JSON.parse(localStorage.getItem("userData"));
+
+    function renderProfile(user) {
+      profileDiv.innerHTML = `
+        <h2>Профиль пользователя</h2>
+        <img src="${user.photo || ''}" alt="Фото профиля">
+        <p><span>ФИО:</span> ${user.fio}</p>
+        <p><span>Возраст:</span> ${user.age}</p>
+        <p><span>Email:</span> ${user.email}</p>
+        <p><span>Город:</span> ${user.city}</p>
+        <p><span>Телефон:</span> ${user.phone}</p>
+        <button class="edit-button" onclick="editProfile()">Изменить данные</button>
+      `;
+    }
+
+    function editProfile() {
+      profileDiv.innerHTML = `
+        <h2>Редактирование профиля</h2>
+        <input type="text" id="fio" value="${user.fio}" placeholder="ФИО" />
+        <input type="number" id="age" value="${user.age}" placeholder="Возраст" />
+        <input type="email" id="email" value="${user.email}" placeholder="Email" />
+        <input type="text" id="city" value="${user.city}" placeholder="Город" />
+        <input type="tel" id="phone" value="${user.phone}" placeholder="Телефон" />
+        <input type="file" id="photo" accept="image/*" />
+        <button class="save-button" onclick="saveProfile()">Сохранить</button>
+      `;
+    }
+
+    function saveProfile() {
+      const updatedUser = {
+        fio: document.getElementById("fio").value,
+        age: document.getElementById("age").value,
+        email: document.getElementById("email").value,
+        city: document.getElementById("city").value,
+        phone: document.getElementById("phone").value,
+        photo: user.photo // будет заменено, если загрузят новое фото
+      };
+
+      const fileInput = document.getElementById("photo");
+      const file = fileInput.files[0];
+
+      if (file) {
+        const reader = new FileReader();
+        reader.onloadend = function () {
+          updatedUser.photo = reader.result;
+          localStorage.setItem("userData", JSON.stringify(updatedUser));
+          user = updatedUser;
+          renderProfile(user);
+        };
+        reader.readAsDataURL(file);
+      } else {
+        localStorage.setItem("userData", JSON.stringify(updatedUser));
+        user = updatedUser;
+        renderProfile(user);
+      }
+    }
+
+    if (user) {
+      renderProfile(user);
+    } else {
+      profileDiv.innerHTML += "<p>Данные не найдены. Пожалуйста, зарегистрируйтесь.</p>";
+    }
+  </script>
+
+</body>
+</html>

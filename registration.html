@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Регистрация</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      width: 320px;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .form-container input,
+    .form-container select {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .submit-button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .submit-button:hover {
+      background-color: #45a049;
+    }
+    .avatar-container {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .avatar-container img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #4CAF50;
+    }
+
+    .avatar-container:hover::after {
+      content: "Изменить";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.5);
+      color: white;
+      font-size: 14px;
+      padding: 5px 0;
+      border-radius: 0 0 50% 50%;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Регистрация</h2>
+    <form id="regForm">
+      <input type="text" id="fio" placeholder="ФИО" required />
+      <input type="number" id="age" placeholder="Возраст" min="10" max="99" required />
+      <input type="email" id="email" placeholder="Электронная почта" required />
+      <select id="city" required>
+        <option value="">Выберите город</option>
+        <option>Астана</option>
+        <option>Алматы</option>
+        <option>Шымкент</option>
+        <option>Семей</option>
+        <option>Караганда</option>
+        <option>Другой</option>
+      </select>
+      <input type="tel" id="phone" placeholder="+7 (___) ___-__-__" required />
+      <h2>Фото профиля</h2>
+
+  <label class="avatar-container">
+    <img src="https://via.placeholder.com/120" alt="Фото профиля" id="profilePic" />
+    <input type="file" id="photo" accept="image/*" />
+  </label>
+
+  <script>
+    const photoInput = document.getElementById("photo");
+    const profilePic = document.getElementById("profilePic");
+
+    photoInput.addEventListener("change", function () {
+      const file = photoInput.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          profilePic.src = e.target.result;
+          // Здесь можно также сохранить в localStorage, если нужно
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
+
+      <button type="submit" class="submit-button">Зарегистрироваться</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("regForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const reader = new FileReader();
+      const fileInput = document.getElementById("photo");
+      const file = fileInput.files[0];
+
+      reader.onloadend = function () {
+        const user = {
+          fio: document.getElementById("fio").value,
+          age: document.getElementById("age").value,
+          email: document.getElementById("email").value,
+          city: document.getElementById("city").value,
+          phone: document.getElementById("phone").value,
+          photo: reader.result || ""
+        };
+
+        localStorage.setItem("userData", JSON.stringify(user));
+        window.location.href = "f.html";
+      };
+
+      if (file) {
+        reader.readAsDataURL(file);
+      } else {
+        const user = {
+          fio: document.getElementById("fio").value,
+          age: document.getElementById("age").value,
+          email: document.getElementById("email").value,
+          city: document.getElementById("city").value,
+          phone: document.getElementById("phone").value,
+          photo: ""
+        };
+        localStorage.setItem("userData", JSON.stringify(user));
+        window.location.href = "f.html";
+      }
+    });
+  </script>
+
+</body>
+</html>
