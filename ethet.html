@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collage with WhatsApp Number</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 30%); /* Три столбца, каждый занимает 30% ширины */
+            grid-gap: 20px; /* Отступ между элементами */
+            align-items: flex-start; /* Выравниваем элементы по верхнему краю */
+        }
+
+        .images {
+            grid-column: span 2; /* Занимает два столбца */
+            display: grid;
+            grid-gap: 0px; /* Отступ между изображениями */
+            align-items: center; /* Выравниваем элементы по центру по вертикали */
+        }
+
+        .image {
+            width: 40%; /* Занимают всю доступную ширину */
+            height: auto; /* Автоматическое масштабирование высоты */
+        }
+
+        .caption {
+            grid-column: span 1; /* Занимает один столбец */
+            text-align: left; /* Выравниваем текст по центру */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="images">
+            <img class="image" src="111.jpg" alt="Photo 1">
+            <img class="image" src="112.jpg" alt="Photo 2">
+        </div>
+        <div class="caption">
+            <p>Для связи с нами напишите на WhatsApp:</p>
+            <a href="https://wa.me/номер_телефона">Отправить сообщение на WhatsApp</a>
+        </div>
+    </div>
+</body>
+</html>
+
